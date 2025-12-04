@@ -1,0 +1,259 @@
+@mixin cards-specializations($src) {
+    width: 100%;
+    height: 412px;
+    background-image: url($src);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    @include respond-to(tablet) {
+        height: 350px;
+    }
+
+    @include respond-to(laptop) {
+        height: 420px;
+    }
+
+    @include respond-to(desktop) {
+        height: 500px;
+        width: 300px;
+    }
+
+    &__filling {
+        h6 {
+            color: #ffffff;
+            margin-block: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-family: Larken-Medium;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 100%;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+
+            @include respond-to(tablet) {
+                font-size: 20px;
+                letter-spacing: 0.8px;
+            }
+
+            @include respond-to(laptop) {
+                font-size: 22px;
+            }
+
+            @include respond-to(desktop) {
+                font-size: 24px;
+                letter-spacing: 1px;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+        }
+
+        p {
+            color: #ffffff;
+            font-family: Roboto;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 130%;
+            letter-spacing: 0.5px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+
+
+            @include respond-to(tablet) {
+                font-size: 15px;
+                line-height: 120%;
+            }
+
+            @include respond-to(desktop) {
+                font-size: 16px;
+                line-height: 100%;
+                letter-spacing: 1px;
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.margin-conteiner-specializations{
+    margin: auto;
+    overflow-x: scroll;
+    @include respond-to(tablet) {
+        width: 700px;
+        overflow-x: hidden;
+    }
+    @include respond-to(laptop) {
+        width: 900px;
+    }
+    @include respond-to(desktop) {
+        width: 1290px;
+    }
+    
+
+}
+
+.specializations {
+    width: 100%; 
+    margin-top: 50px;
+    gap: 30px;
+
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+    grid-template-rows: auto auto 412px;
+    grid-template-areas: 
+        ". des ."
+        ". h3 ."
+        "floor interior architecture";
+
+    @include respond-to(tablet) {
+        position: static;
+        margin: 100px auto 0;
+        grid-template-columns: 700px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "des"
+            "h3"
+            "floor"
+            "interior"
+            "architecture"
+            "construction";
+            row-gap: 25px;
+    }
+
+    @include respond-to(laptop) {
+        margin-top: 120px;
+        width: 900px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        column-gap: 50px;
+        grid-template-areas: 
+            "des des"
+            "h3 h3"
+            "floor construction"
+            "interior architecture";
+        gap: 30px;
+    }
+
+    @include respond-to(desktop) {
+        width: 1290px;
+        margin-top: 140px;
+        gap: 0px;
+        grid-template-columns: 300px 30px 300px 30px 300px 30px 300px;
+        grid-template-rows: 30px 55px 75px 370px 130px;
+        grid-template-areas: 
+            ". des des des des des ."
+            "floor h3 h3 h3 h3 h3 construction"
+            "floor . . . . . construction"
+            "floor . interior . architecture . construction"
+            ". . interior . architecture . .";
+    }
+
+    h3 {
+        grid-area: h3;
+        font-family: Larken-Regular;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+        text-align: center;
+        margin-block: 0px;
+
+        @include respond-to(tablet) {
+            font-size: 42px;
+        }
+
+        @include respond-to(laptop) {
+            font-size: 50px;
+            line-height: 100%;
+            letter-spacing: 0.8px;
+        }
+
+        @include respond-to(desktop) {
+            font-size: 60px;
+            letter-spacing: 1px;
+        }
+    }
+
+    &__des {
+        grid-area: des;
+        color: #FFC978;
+        font-family: Larken-Medium;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include respond-to(tablet) {
+            font-size: 15px;
+            letter-spacing: 3px;
+        }
+
+        @include respond-to(desktop) {
+            font-size: 16px;
+            letter-spacing: 4px;
+        }
+    }
+
+    .floor {
+        grid-area: floor;
+        @include cards-specializations("../img/specializations1.jpg");
+    }
+
+    .interior {
+        grid-area: interior;
+        @include cards-specializations("../img/specializations2.jpg");
+    }
+
+    .architecture {
+        grid-area: architecture;
+        @include cards-specializations("../img/specializations3.jpg");
+    }
+
+    .construction {
+        grid-area: construction;
+        @include cards-specializations("../img/specializations4.jpg");
+        display: none;
+        @include respond-to(tablet){
+            display: flex;
+        }
+    }
+}
+
+
+.design-back {
+    display: none;
+
+    @include respond-to(laptop) {
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: Roboto;
+        font-weight: 800;
+        font-size: 80px;
+        line-height: 70px;
+        letter-spacing: -6px;
+        text-transform: uppercase;
+        color: #0B0E1766;
+        z-index: -1;
+        white-space: nowrap;
+    }
+
+    @include respond-to(desktop) {
+        top: -60px;
+        left: 1320px;
+        transform: none;
+        font-size: 168px;
+        line-height: 100px;
+        letter-spacing: -10px;
+    }
+}

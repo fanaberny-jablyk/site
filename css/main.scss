@@ -1,0 +1,76 @@
+
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1440px,
+  large: 1920px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+button {
+  border: 1px #fff solid;
+  background: none;
+  color: #FFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+body {
+
+    margin-inline: 0px;
+    margin-block: 0px;
+    overflow-x: hidden;
+    background-color: #161922;
+    color: #FFF;
+}
+
+ul{
+    list-style: none;
+    margin-inline: 0px;
+    margin-block: 0px;
+    padding: 0px;
+}
+
+
+p{
+    margin-inline: 0px;
+    margin-block: 0px;
+}
+
+
+
+section{
+  padding: 0px;
+}
+
+h5{
+  margin-block: 0px;
+  margin-inline: 0px;
+}
+h3{
+  margin-block: 0px;
+  margin-inline: 0px;
+}
+
+
+
+@import 'first';
+@import 'specializations';
+@import 'about-us';
+@import 'latest-projects';
+@import 'create-digital-experience';
+@import 'availability';
+@import 'team';
+@import 'footer';

@@ -1,0 +1,223 @@
+.create-digital-experience {
+    margin-top: 50px;
+    background-color: #23272F;
+    padding: 30px 20px;
+
+    @include respond-to(tablet) {
+        padding: 50px 40px;
+        margin-top: 80px;
+    }
+
+    @include respond-to(laptop) {
+        padding: 50px 60px;
+        margin-top: 100px;
+    }
+
+    @include respond-to(desktop) {
+        padding: 62px 0px 100px 230px;
+        margin-top: 140px;
+    }
+
+    .digital-grid {
+        display: grid;
+        grid-template-columns: 134px 134px 120px;
+        grid-template-rows: auto 86px 59px 334px;
+        grid-template-areas: 
+            "h h h"
+            "statistics1 statistics2 statistics3"
+            "button button ."
+            "img img img";
+        row-gap: 30px;
+        max-width: 388px;
+        margin: 0 auto;
+
+        @include respond-to(tablet) {
+            max-width: 768px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto 100px 400px;
+            grid-template-areas: 
+                "h h h ."
+                "statistics1 statistics2 statistics3 button"
+                "img img img img";
+            row-gap: 40px;
+        }
+
+        @include respond-to(laptop) {
+            max-width: 1024px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto 120px 80px;
+            grid-template-areas: 
+                "h h h img img img"
+                "statistics1 statistics2 statistics3 img img img"
+                "button button button img img img";
+            column-gap: 40px;
+            row-gap: 50px;
+        }
+
+        @include respond-to(desktop) {
+            max-width: 1330px;
+            margin: 0px;
+            grid-template-columns: 565px 140px 168px 168px 168px;
+            grid-template-rows: 182px 96px 59px;
+            grid-template-areas: 
+                "img . h h h"
+                "img . statistics1 statistics2 statistics3"
+                "img . button button .";
+            row-gap: 50px;
+            column-gap: 0px;
+        }
+
+        h3 {
+            grid-area: h;
+            font-size: 36px;
+            font-family: Larken-Regular;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-align: start;
+            margin: 0;
+
+            @include respond-to(tablet) {
+                font-size: 42px;
+                text-align: left;
+            }
+
+            @include respond-to(laptop) {
+                font-size: 52px;
+                line-height: 110%;
+            }
+
+            @include respond-to(desktop) {
+                margin-top: 42px;
+                font-size: 60px;
+            }
+        }
+
+        .statistics {
+            text-align: center;
+
+            @include respond-to(tablet) {
+                text-align: left;
+            }
+
+            @include respond-to(desktop) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            h5 {
+                font-family: Larken-Regular;
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 44px;
+                line-height: 70px;
+                color: #FFC978;
+                margin: 0;
+
+                @include respond-to(tablet) {
+                    font-size: 48px;
+                }
+
+                @include respond-to(laptop) {
+                    font-size: 52px;
+                }
+
+                @include respond-to(desktop) {
+                    font-size: 70px;
+                }
+                span{
+                    font-size: 32px;
+                }
+            }
+
+            p {
+                font-family: Roboto;
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 18px;
+                line-height: 100%;
+                color: #DFE9EB;
+                margin: 0;
+
+                @include respond-to(tablet) {
+                    font-size: 18px;
+                }
+
+                @include respond-to(desktop) {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .st1 {
+            grid-area: statistics1;
+        }
+
+        .st2 {
+            grid-area: statistics2;
+        }
+
+        .st3 {
+            grid-area: statistics3;
+        }
+
+        button {
+            grid-area: button;
+            width: 210px;
+            height: 59px;
+            align-self: center;
+
+            @include respond-to(tablet) {
+                font-size: 18px;
+                justify-self: start;
+            }
+
+            @include respond-to(laptop) {
+                font-size: 20px;
+            }
+
+            &:hover {
+                background: #FFFFFF;
+                transform: translateY(-2px);
+            }
+        }
+
+        .drawing {
+            grid-area: img;
+            width: 388px;
+            height: 334px;
+            object-fit: contain;
+            justify-self: center;
+
+            @include respond-to(tablet) {
+                width: 100%;
+                max-width: 500px;
+                height: 400px;
+            }
+
+            @include respond-to(laptop) {
+                width: 100%;
+                max-width: 600px;
+                height: 450px;
+                justify-self: end;
+            }
+
+            @include respond-to(desktop) {
+                width: 560px;
+                height: 480px;
+
+            }
+        }
+    }
+
+    .R {
+        display: none;
+
+        @include respond-to(desktop) {
+            display: block;
+            position: absolute;
+            left: 1347px;
+            top: 4035px;
+        }
+    }
+}

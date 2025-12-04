@@ -1,0 +1,290 @@
+.latest-projects {
+    width: 100%;
+    margin-top: 60px;
+    @include respond-to(tablet) {
+        margin-top: 80px;
+    }
+
+    @include respond-to(laptop) {
+        margin-top: 100px;
+    }
+
+    @include respond-to(desktop) {
+        width: 1290px;
+        margin: auto;
+        margin-top: 140px;
+    }
+
+    &__des {
+        color: #FFC978;
+        font-family: Larken-Medium;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 4px;
+        
+        @include respond-to(mobile) {
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+        
+        @include respond-to(tablet) {
+            text-align: left;
+            letter-spacing: 6px;
+
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        gap: 40px;
+
+        @include respond-to(mobile) {
+            margin: auto;
+
+        }
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include respond-to(laptop) {
+            align-items: center;
+        }
+        @include respond-to(desktop) {
+            margin-top: 13px;
+            align-items: center;
+
+        }
+
+        h3 {
+            margin-block: 0px;
+            margin-top: 15px;
+            font-family: Larken-Regular;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 32px;
+            line-height: 100%;
+            letter-spacing: 1px;
+            text-align: center;
+
+            @include respond-to(tablet) {
+                font-size: 42px;
+                text-align: left;
+            }
+
+            @include respond-to(laptop) {
+                font-size: 50px;
+            }
+
+            @include respond-to(desktop) {
+                font-size: 60px;
+                letter-spacing: 3px;
+            }
+        }
+
+        ul {
+            align-self: end;
+            list-style: none;
+            margin-block: 0px;
+            margin-inline: 0px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            width: 388px;
+
+            @include respond-to(mobile) {
+                width: 100%;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 10px;
+                width: 430px;
+            }
+
+            @include respond-to(tablet) {
+                width: 430px;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 0;
+                margin-bottom: 18px;
+            }
+
+            li {
+                color: #ABAEB7;
+                text-decoration: none;
+                font-family: Roboto;
+                font-weight: 500;
+                font-size: 16px;
+                
+                @include respond-to(mobile) {
+                    font-size: 16px;
+                }
+            }
+
+            li:first-child {
+                color: #FFB076;
+                text-decoration: underline;
+                text-underline-offset: 6px;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: inherit;
+            }
+        }
+    }
+}
+
+.latest-projects-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 189px 189px;
+    grid-template-rows: 30px 220px 20px 10px 20px 220px 30px;
+    column-gap: 10px;
+    grid-template-areas: 
+    "a1 ."
+    "a1 a2"
+    ". a2"
+    "a3 a2"
+    "a3 ."
+    "a3 a4"
+    ". a4";
+
+    @include respond-to(tablet) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 400px 400px;
+        gap: 25px;
+        margin-top: 55px;
+        grid-template-areas: 
+        "a1 a2"
+        "a3 a4";
+    }
+
+    @include respond-to(desktop) {
+        margin-top: 60px;
+        grid-template-columns: 300px 30px 300px 30px 300px 30px 300px;
+        grid-template-rows: 50px 450px 20px 30px 20px 450px 50px;
+        grid-template-areas: 
+            "a1 . . . a3 . ."
+            "a1 . a2 . a3 . a4"
+            ". . a2 . . . a4"
+            "a5 . a2 . a7 . a4"
+            "a5 . . . a7 . ."
+            "a5 . a6 . a7 . a8"
+            ". . a6 . . . a8";
+        gap: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include respond-to(tablet) {
+            height: 400px;
+        }
+
+        @include respond-to(desktop) {
+            height: auto;
+            object-fit: fill;
+        }
+    }
+
+    &__1{
+        grid-area: a1;
+    }
+    &__2{
+        grid-area: a2;
+    }
+    &__3{
+        grid-area: a3;
+    }
+    &__4{
+        grid-area: a4;
+    }
+    &__5{
+        grid-area: a5;
+        display: none;
+    }
+    &__6{
+        grid-area: a6;
+        display: none;
+
+    }
+    &__7{
+        grid-area: a7;
+        display: none;
+
+    }
+    &__8{
+        grid-area: a8;
+        display: none;
+
+    }
+    
+    
+    @include respond-to(desktop) {
+        &__1 { grid-area: a1; }
+        &__2 { grid-area: a2; }
+        &__3 { grid-area: a3; }
+        &__4 { grid-area: a4; }
+        &__5{
+            grid-area: a5;
+            display: block;
+        }
+        &__6{
+            grid-area: a6;
+            display: block;
+
+        }
+        &__7{
+            grid-area: a7;
+            display: block;
+
+        }
+        &__8{
+            grid-area: a8;
+            display: block;
+
+        }
+    }
+}
+
+
+.margin-conteiner-latest-projects {
+    margin: auto;
+    width: 388px;
+
+    @include respond-to(tablet){
+        width: 708px;
+    }
+    @include respond-to(laptop){
+        width: 944px;
+    }
+    @include respond-to(desktop){
+        width: 1290px;
+    }
+
+}
+
+.margin-conteiner-latest-projects-grid {
+    margin: auto;
+    width: 388px;
+
+    @include respond-to(tablet){
+        width: 708px;
+    }
+    @include respond-to(laptop){
+        width: 944px;
+    }
+    @include respond-to(desktop){
+        width: 1290px;
+    }
+
+}

@@ -1,0 +1,252 @@
+.margin-conteiner-about-us {
+    width: 388px;
+    margin: auto;
+    @include respond-to(tablet) {
+        width: 700px;
+    }
+    @include respond-to(laptop) {
+        width: 900px;
+    }
+    @include respond-to(desktop) {
+        width: 1290px;
+    }
+}
+
+
+
+.about-us {
+    width: 100%;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 185px 185px;
+    grid-template-rows: 26px 130px 49px 231px 49px 30px 91px 20px 175px;
+    grid-template-areas: 
+        "h3 h3"
+        "p p"
+        ". as3"
+        "as2 as3"
+        "as2 ."
+        ". ."
+        "area85 satisfied"
+        ". ."
+        "as1 as1";
+        column-gap: 18px;
+
+    @include respond-to(tablet) {
+        width: 700px;
+        margin-top: 100px;
+        grid-template-columns: 1fr 1fr 2fr 2fr;
+        grid-template-rows: auto auto 250px 150px;
+        grid-template-areas: 
+            "h3 h3 h3 h3"
+            "p p p p"
+            "area85 satisfied as2 as3"
+            "as1 as1 as2 as3";
+        gap: 25px;
+    }
+
+    @include respond-to(desktop) {
+        width: 1290px;
+        margin-top: 140px;
+        grid-template-columns: 80px 150px 180px 250px 300px 30px 300px;
+        grid-template-rows: 87px 180px 120px 30px 88px 87px;
+        grid-template-areas: 
+            "h3 h3 h3 . . . as3"
+            "rysa p p p as2 . as3"
+            "area85 area85 satisfied . as2 . as3"
+            ". . . . as2 . as3"
+            "as1 as1 as1 read-more as2 . as3"
+            "as1 as1 as1 read-more as2 . .";
+        gap: 0px;
+    }
+
+    h3 {
+        grid-area: h3;
+        font-family: Larken-Regular;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+        margin-block: 0px;
+        text-align: center;
+
+        @include respond-to(tablet) {
+            font-size: 42px;
+            text-align: left;
+        }
+
+        @include respond-to(laptop) {
+            font-size: 50px;
+            line-height: 100%;
+            letter-spacing: 0.8px;
+        }
+
+        @include respond-to(desktop) {
+            font-size: 60px;
+            letter-spacing: 1px;
+        }
+    }
+
+    &__rysa {
+        display: none;
+
+        @include respond-to(desktop) {
+            display: flex;
+            grid-area: rysa;
+            justify-content: end;
+            align-items: center;
+        }
+    }
+
+    &__inform {
+        grid-area: p;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        @include respond-to(tablet) {
+            width: 90%;
+        }
+
+        @include respond-to(desktop) {
+            margin-left: 30px;
+            width: 80%;
+        }
+
+        p {
+            font-family: Roboto;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+
+            @include respond-to(tablet) {
+                font-size: 15px;
+                line-height: 24px;
+                text-align: left;
+            }
+
+            @include respond-to(desktop) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+
+
+    &__85 {
+        grid-area: area85;
+        display: flex;
+        align-items: end;
+        img{
+            width: 140px;
+            height: 80px;
+
+            @include respond-to(tablet) {
+                width: 160px;
+                height: 90px;
+            }
+
+            @include respond-to(desktop) {
+                width: 190px;
+                height: 100px;
+            }
+        }
+    }
+
+    &__satisfied {
+        grid-area: satisfied;
+        display: flex;
+        align-items: end;
+
+        p {
+            font-family: Roboto;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 1px;
+            text-align: center;
+
+            @include respond-to(tablet) {
+                font-size: 18px;
+                line-height: 26px;
+                text-align: left;
+            }
+
+            @include respond-to(desktop) {
+                font-size: 20px;
+                line-height: 30px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    &__1 {
+        grid-area: as1;
+        width: 388px;
+        height: auto;
+        max-width: 410px;
+        margin: 0 auto;
+
+        @include respond-to(tablet) {
+            width: 100%;
+            height: auto;
+        }
+
+        @include respond-to(desktop) {
+            width: 410px;
+            height: 175px;
+            margin: 0;
+        }
+    }
+
+    &__2 {
+        grid-area: as2;
+        width: 100%;
+        height: 280px;
+        max-width: 300px;
+        margin: 0 auto;
+
+        @include respond-to(tablet) {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include respond-to(desktop) {
+            width: 300px;
+            height: 500px;
+            margin: 0;
+        }
+    }
+
+    &__3 {
+        grid-area: as3;
+        width: 100%;
+        height: 280px;
+        max-width: 300px;
+        margin: 0 auto;
+
+        @include respond-to(tablet) {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include respond-to(desktop) {
+            width: 300px;
+            height: 500px;
+            margin: 0;
+        }
+    }
+
+    &__read-more {
+        display: none;
+
+        @include respond-to(desktop) {
+            display: block;
+            grid-area: read-more;
+            margin-left: 25px;
+            width: 202px;
+            height: 202px;
+        }
+    }
+}
