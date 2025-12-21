@@ -63,7 +63,7 @@
                 "img . h h h"
                 "img . statistics1 statistics2 statistics3"
                 "img . button button .";
-            row-gap: 50px;
+            row-gap: 45px;
             column-gap: 0px;
         }
 
@@ -123,7 +123,7 @@
                 }
 
                 @include respond-to(desktop) {
-                    font-size: 70px;
+                    font-size: 68px;
                 }
                 span{
                     font-size: 32px;
@@ -174,6 +174,9 @@
 
             @include respond-to(laptop) {
                 font-size: 20px;
+            }
+            @include respond-to(desktop) {
+                margin-top: 14px;
             }
 
             &:hover {

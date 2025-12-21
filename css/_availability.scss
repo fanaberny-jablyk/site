@@ -7,7 +7,7 @@
     @include respond-to(desktop){
         overflow-x: hidden;
         width: 1290px;
-        margin: 140px auto 0px;
+        margin: 150px auto 0px;
 
 
     }
@@ -29,6 +29,7 @@
                 line-height: 100%;
                 letter-spacing: 30%;
                 color: #FFC978;
+                letter-spacing: 5px;
             }
             h3{
                 font-family: Larken-Regular;
@@ -45,7 +46,9 @@
 
                 @include respond-to(desktop){
                     font-size: 60px;
+                    margin-top: 25px;
                 }
+                
             }
         }
 
@@ -58,6 +61,9 @@
             display: none;
             @include respond-to(laptop){
                 display: flex;
+            }
+            @include respond-to(desktop){
+                width: 470px;
             }
 
             p{
@@ -96,21 +102,26 @@
             display: grid;
             grid-template-columns: 210px 140px 120px 135px 1fr 1fr;
 
-            &__Hrow{
+            .availability-table-row-Hrow{
 
                 display: flex;
                 align-items: center;
-
                 p{
                     font-family: Larken-Medium;
                     font-weight: 400;
                     font-style: Regular;
                     font-size: 16px;
                     line-height: 100%;
-                    letter-spacing: 5%;
+                    letter-spacing: 1px;
                     color: #FFB076;
                 }
+
             }
+            .availability-table-row-Hrow:last-child{
+                justify-content: end;
+
+            }
+
             &__row{
 
                 display: flex;
@@ -133,8 +144,11 @@
                 }
             }
             .active-underline-row{
+                justify-content: end;
                 p{
                     text-decoration: underline;
+                    color:#FFB076;
+
                 }
             }
             .passive-row{
@@ -159,5 +173,10 @@
 }
 .wawy{
     position: relative;
+    z-index: -10;
     top: 16px;
+    display: none;
+    @include respond-to(desktop){
+        display: block;
+    }
 }

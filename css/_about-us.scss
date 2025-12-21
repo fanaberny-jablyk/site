@@ -84,6 +84,7 @@
         @include respond-to(desktop) {
             font-size: 60px;
             letter-spacing: 1px;
+            margin-top: 6px;
         }
     }
 
@@ -196,7 +197,6 @@
         @include respond-to(desktop) {
             width: 410px;
             height: 175px;
-            margin: 0;
         }
     }
 
@@ -215,7 +215,7 @@
         @include respond-to(desktop) {
             width: 300px;
             height: 500px;
-            margin: 0;
+            margin-top: 3px;
         }
     }
 
@@ -234,7 +234,7 @@
         @include respond-to(desktop) {
             width: 300px;
             height: 500px;
-            margin: 0;
+            margin-top: 3px;
         }
     }
 
