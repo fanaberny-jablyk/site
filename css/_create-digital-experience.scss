@@ -178,11 +178,6 @@
             @include respond-to(desktop) {
                 margin-top: 14px;
             }
-
-            &:hover {
-                background: #FFFFFF;
-                transform: translateY(-2px);
-            }
         }
 
         .drawing {

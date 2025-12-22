@@ -383,7 +383,7 @@ nav.mobile-open ul li {
 
 .wave {
   position: absolute;
-  top: 10px;
+  top: 100px;
   z-index: -1;
   width: 100%;
 }
@@ -1616,10 +1616,6 @@ nav.mobile-open ul li {
   .create-digital-experience .digital-grid button {
     margin-top: 14px;
   }
-}
-.create-digital-experience .digital-grid button:hover {
-  background: #FFFFFF;
-  transform: translateY(-2px);
 }
 .create-digital-experience .digital-grid .drawing {
   grid-area: img;
